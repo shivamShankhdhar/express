@@ -1,12 +1,9 @@
 var express = require('express');
+var adminRoutes = require('./routes.js');
 
 const app = express();
-app.get('/',function(request,response){
-    response.send('index.html');
-});
-app.get('/home',function(request,response){
-    response.send('home page')
-});
+app.use('/admin',adminRoutes);
+
 app.listen(8080,function(){
     console.log('server started at http://localhost:8080');
 });
