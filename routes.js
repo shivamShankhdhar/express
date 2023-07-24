@@ -7,6 +7,6 @@ router.get('/',function(request,response){
 });
 
 router.get('/home',function(request,response){
-    response.send('home page')
+    response.send('home page on admin ')
 });
 module.exports = router;
