@@ -2,8 +2,12 @@ var express = require('express');
 var adminRoutes = require('./routes.js');
 
 const app = express();
-app.use('/admin',adminRoutes); //admin is a baase route
+app.use('/admin',adminRoutes); //admin is a base route
 
+app.use(function(request,response,next){
+    console.log('MiddleWare Called'+request.method + request.url);
+    next();
+});
 app.get('/',function(request,response){
     response.send("this is the local /");
 });
